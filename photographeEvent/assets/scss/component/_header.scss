@@ -1,0 +1,38 @@
+.header {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+
+    .logo {
+      width: 300px;
+      margin: 0 auto;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.1rem;
+        
+        li {
+          padding: 0 30px;
+
+          a {
+              color: $noir;
+              font-weight: 600;
+              text-transform: uppercase;              
+          }
+          a:hover {
+            color: $rouge;
+          }
+
+          // a:visited {
+          //   color: $rouge;
+          // }
+        }
+    }
+    
+}

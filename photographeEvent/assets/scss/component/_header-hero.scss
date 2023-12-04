@@ -1,0 +1,14 @@
+.header-hero {
+    position: relative;
+        background: url(../images/nathalie-11.webp) center/cover;
+        width: 100vw;
+        min-height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .image-hero {
+        position: absolute;
+        max-width: 90%;
+     }
+}

@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "poppins-regular";
+  src: url("../fonts/poppins-regular-webfont.woff2") format("woff2"), url("../fonts/poppins-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-semibold";
+  src: url("../fonts/poppins-semibold-webfont.woff2") format("woff2"), url("../fonts/poppins-semibold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-thin";
+  src: url("../fonts/poppins-thin-webfont.woff2") format("woff2"), url("../fonts/poppins-thin-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "space_monobold";
+  src: url("../fonts/spacemono-bold-webfont.woff2") format("woff2"), url("../fonts/spacemono-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "space_monoregular";
+  src: url("../fonts/spacemono-regular-webfont.woff2") format("woff2"), url("../fonts/spacemono-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-bold";
+  src: url("../fonts/poppins-bold-webfont.woff2") format("woff2"), url("../fonts/poppins-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-extrabold";
+  src: url("../fonts/poppins-extrabold-webfont.woff2") format("woff2"), url("../fonts/poppins-extrabold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-extralight";
+  src: url("../fonts/poppins-extralight-webfont.woff2") format("woff2"), url("../fonts/poppins-extralight-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-light";
+  src: url("../fonts/poppins-light-webfont.woff2") format("woff2"), url("../fonts/poppins-light-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "poppins-medium";
+  src: url("../fonts/poppins-medium-webfont.woff2") format("woff2"), url("../fonts/poppins-medium-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "space_monoregular", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  text-align: center;
+  border: 2px solid red;
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  height: 8vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.header .logo {
+  width: 300px;
+  margin: 0 auto;
+}
+.header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.1rem;
+}
+.header ul li {
+  padding: 0 30px;
+}
+.header ul li a {
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.header ul li a:hover {
+  color: #e00000;
+}
+
+.header-hero {
+  position: relative;
+  background: url(../images/nathalie-11.webp) center/cover;
+  width: 100vw;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-hero .image-hero {
+  position: absolute;
+  max-width: 90%;
+}
+
+.site__footer {
+  height: 4vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.site__footer ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+.site__footer ul li {
+  padding: 0 70px;
+}
+.site__footer ul li a {
+  color: black;
+  font-weight: 600;
+}/*# sourceMappingURL=theme.css.map */
