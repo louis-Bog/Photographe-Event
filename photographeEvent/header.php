@@ -6,25 +6,26 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-
-<header class="header">
-    <nav role="navigation" aria-label="<?php esc_html_e( 'Menu principal', 'text-domain' ); ?>">
-        <a href="<?php echo home_url( '/' ); ?>">
-        <img class="logo" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo.png" alt="Logo">
-        </a>  
-
-    
-    <?php 
-	wp_nav_menu( 
-        array( 
-            'theme_location' => 'main', 
-            'container' => 'ul', // afin d'éviter d'avoir une div autour 
-            'menu_class' => 'site__header__menu', // ma classe personnalisée 
-            'menu_id'        => 'primary-menu',
-        ) 
-    ); 
-?>
+<body <?php body_class(); ?> id="post-<?php the_ID(); ?>">
+  <!--Header-->
+  <header class="header">
+    <nav class="header-navbar">
+      <?php if (function_exists('the_custom_logo')) {
+        the_custom_logo();
+      } ?>
+      <button id="hamburger" class="hamburger" aria-controls="header-nav" aria-expanded="false" aria-label="Menu navigation">
+        <span class="hamburger-icon"></span>
+      </button>
+      <nav id="header-nav" class="header-nav" role="navigation" aria-label="<?php __('Menu principal', 'PhotoEvent'); ?>">
+        <?php
+        wp_nav_menu([
+          'theme_location' => 'header-menu',
+          'menu_class'     => 'header-nav-list',
+          'menu_id'        => 'header-nav-list',
+          'container'      => false
+        ]);
+        ?>
+      </nav>
     </nav>
 </header>
     <?php wp_body_open(); ?>

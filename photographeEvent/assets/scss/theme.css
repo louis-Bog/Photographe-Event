@@ -1,59 +1,34 @@
+/* SpaceMono Regular */
 @font-face {
-  font-family: "poppins-regular";
-  src: url("../fonts/poppins-regular-webfont.woff2") format("woff2"), url("../fonts/poppins-regular-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "poppins-semibold";
-  src: url("../fonts/poppins-semibold-webfont.woff2") format("woff2"), url("../fonts/poppins-semibold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "poppins-thin";
-  src: url("../fonts/poppins-thin-webfont.woff2") format("woff2"), url("../fonts/poppins-thin-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "space_monobold";
-  src: url("../fonts/spacemono-bold-webfont.woff2") format("woff2"), url("../fonts/spacemono-bold-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "space_monoregular";
+  font-family: "space mono";
   src: url("../fonts/spacemono-regular-webfont.woff2") format("woff2"), url("../fonts/spacemono-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+/* SpaceMono BoldItalic */
 @font-face {
-  font-family: "poppins-bold";
-  src: url("../fonts/poppins-bold-webfont.woff2") format("woff2"), url("../fonts/poppins-bold-webfont.woff") format("woff");
+  font-family: "space mono";
+  src: url("../fonts/spacemono-bolditalic-webfont.woff2") format("woff2"), url("../fonts/spacemono-bolditalic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+/* SpaceMono Italic */
 @font-face {
-  font-family: "poppins-extrabold";
-  src: url("../fonts/poppins-extrabold-webfont.woff2") format("woff2"), url("../fonts/poppins-extrabold-webfont.woff") format("woff");
+  font-family: "space mono";
+  src: url("../fonts/spacemono-italic-webfont.woff2") format("woff2"), url("../fonts/spacemono-italic-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+/* Poppins Light */
 @font-face {
-  font-family: "poppins-extralight";
-  src: url("../fonts/poppins-extralight-webfont.woff2") format("woff2"), url("../fonts/poppins-extralight-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "poppins-light";
+  font-family: "Poppins";
   src: url("../fonts/poppins-light-webfont.woff2") format("woff2"), url("../fonts/poppins-light-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+/* Poppins Medium */
 @font-face {
-  font-family: "poppins-medium";
+  font-family: "Poppins";
   src: url("../fonts/poppins-medium-webfont.woff2") format("woff2"), url("../fonts/poppins-medium-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
@@ -62,7 +37,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "space_monoregular", sans-serif;
+  font-family: "space mono", sans-serif;
 }
 
 li {
@@ -70,47 +45,64 @@ li {
 }
 
 body {
-  text-align: center;
+  font-family: "Space Mono";
+  font-size: 16px;
+  background-color: #fff;
   border: 2px solid red;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+h2, h3, h4, h5, h6 {
+  margin: 0;
+  line-height: 1;
 }
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
+/* Header */
 .header {
-  height: 8vh;
+  background-color: #fff;
+  box-shadow: 0px 4px 14px 10px rgba(0, 0, 0, 0.03);
+  padding: 1.75rem 0;
+}
+
+.header-navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1440px;
-  margin: 0 auto;
+  width: calc(100% - 60px);
+  max-width: 1148px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
-.header .logo {
-  width: 300px;
-  margin: 0 auto;
-}
-.header ul {
+
+.header-nav {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.1rem;
 }
-.header ul li {
-  padding: 0 30px;
-}
-.header ul li a {
-  color: black;
-  font-weight: 600;
+.header-nav .header-nav-list {
+  display: flex;
+  gap: 45px;
+  padding: 0;
+  margin: 0;
   text-transform: uppercase;
 }
-.header ul li a:hover {
-  color: #e00000;
+.header-nav .header-nav-list a {
+  color: #000;
+}
+.header-nav .header-nav-list .current-menu-item a {
+  font-weight: 700;
 }
 
 .header-hero {
   position: relative;
-  background: url(../images/nathalie-11.webp) center/cover;
+  background: url(../images/img-hero.webp) center/cover;
   width: 100vw;
   min-height: 90vh;
   display: flex;
@@ -122,25 +114,407 @@ a {
   max-width: 90%;
 }
 
-.site__footer {
-  height: 4vh;
+.row {
+  display: flex;
+  gap: 1rem; /* espace entre les colonnes */
+}
+
+.col {
+  flex: 1;
+}
+
+.col-1 {
+  flex: 1;
+} /* 1 part de l'espace disponible */
+.col-2 {
+  flex: 2;
+} /* 2 parts de l'espace disponible */
+.col-3 {
+  flex: 3;
+} /* ... et ainsi de suite */
+.container {
+  max-width: 1148px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 1440px;
+  padding: 8px 0;
+  border-top: 1px solid #000;
+}
+
+.footer-nav-list {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 86px;
+  text-transform: uppercase;
+}
+
+/* CSS pour le Modale */
+.popup-overlay {
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none; /* elle sera activer par Jquery avec la methode css('display', 'flex'); */
+  width: 100%;
+  height: 100%;
+}
+
+.popup-contact {
+  background: white;
+  position: relative;
+  width: 600px;
+  min-height: 600px;
+  border: 5px solid black;
+}
+.popup-contact img {
+  width: 100%;
+}
+
+/* Contact Form */
+.wpcf7 {
+  width: 80%;
   margin: 0 auto;
 }
-.site__footer ul {
+
+.wpcf7-form {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+}
+.wpcf7-form label {
+  font-family: Poppins;
+  font-size: 12px;
+  font-weight: 500;
   text-transform: uppercase;
-  font-size: 1.1rem;
+  color: #313144;
 }
-.site__footer ul li {
-  padding: 0 70px;
+
+.wpcf7-form-control {
+  width: 100%;
+  margin-top: 8px;
+  min-height: 40px;
+  border: 1px solid #B8BBC2;
+  border-radius: 8px;
 }
-.site__footer ul li a {
-  color: black;
-  font-weight: 600;
+
+.wpcf7-submit {
+  font-family: "Space Mono";
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+}
+.wpcf7-submit:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+@media screen and (max-width: 1440px) {
+  .popup-contact {
+    width: 80%;
+    height: 70%;
+    max-width: 400px;
+    border: 3px solid black;
+  }
+}
+@media screen and (min-width: 600px) and (max-width: 1024px) {
+  .popup-contact {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .popup-contact {
+    width: 80%;
+  }
+}
+/* Hamburger */
+.hamburger {
+  display: none;
+  position: relative;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  transition: transform 0.5s;
+  background-color: transparent;
+  /* middle line */
+}
+.hamburger .hamburger-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 27px;
+  height: 1px;
+  background-color: black;
+  transform: translateX(-50%) translateY(-50%); /* centering trickz */
+  /* top and bottom lines */
+}
+.hamburger .hamburger-icon::before, .hamburger .hamburger-icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 27px;
+  height: 1px;
+  background-color: black;
+  transition: transform 0.5s;
+}
+.hamburger .hamburger-icon::before {
+  transform: translateY(-9px);
+}
+.hamburger .hamburger-icon::after {
+  transform: translateY(9px);
+}
+
+.hamburger {
+  /* cross transformation from center **/
+  /* transition middle line */
+}
+.hamburger .hamburger-icon::before,
+.hamburger .hamburger-icon::after {
+  transform-origin: 50% 50%;
+}
+.hamburger .hamburger-icon {
+  transition: background 0.1s;
+}
+
+.hamburger.is-opened {
+  /* Hide middle line via bg: transparent & show cross via translate */
+}
+.hamburger.is-opened .hamburger-icon {
+  background: transparent;
+}
+.hamburger.is-opened .hamburger-icon::before {
+  transform: translateY(0) rotate(45deg);
+}
+.hamburger.is-opened .hamburger-icon::after {
+  transform: translateY(0) rotate(-45deg);
+}
+
+.btn {
+  height: 50px;
+  width: 272px;
+  background: #D8D8D8;
+  font-family: "Space Mono";
+  font-size: 12px;
+  border: none;
+  border-radius: 2px;
+  transition: background-color 0.2s ease-in-out;
+}
+.btn:hover {
+  color: #fff;
+  background: #000;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .hero .hero-title {
+    font-size: 75px;
+  }
+}
+@media (max-width: 600px) {
+  .home-page .container {
+    padding-top: 35px;
+    width: 100%;
+  }
+  .home-page .hero {
+    height: 40vh;
+  }
+  .home-page .hero .hero-title {
+    font-size: 36px;
+  }
+  .filters .filter-category,
+  .filters .filter-format,
+  .filters .filter-sort {
+    width: 270px;
+  }
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+  .gallery .gallery-item {
+    height: 278px;
+  }
+  .single-photo-page {
+    padding-top: 20px;
+  }
+  .single-photo-page.container {
+    width: 100%;
+  }
+  .single-photo .row {
+    flex-direction: column-reverse;
+  }
+  .single-photo .single-photo-title {
+    font-size: 46px;
+  }
+  .single-photo .single-photo-content {
+    padding: 0 55px;
+  }
+  .single-photo .single-photo-img {
+    padding: 0 55px;
+  }
+  .single-photo .single-photo-footer.row {
+    flex-direction: column;
+  }
+  .single-photo .single-photo-footer {
+    flex-direction: row;
+    padding: 24px 55px;
+    margin-bottom: 0;
+  }
+  .single-photo .single-photo-footer .single-photo-footer-txt {
+    margin-right: 0;
+  }
+  .related-photos {
+    align-items: center;
+    gap: 20px;
+    padding: 25px 30px;
+  }
+  .related-photos .related-photos-title {
+    padding: 0 30px;
+  }
+  .btn.view-all-photos {
+    display: none;
+  }
+  .lightbox-prev {
+    bottom: 50%;
+    left: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+  }
+  .lightbox-next {
+    bottom: 50%;
+    right: 10px;
+    background-color: transparent;
+    border: none;
+    font-size: 10px;
+  }
+  .lightbox-content img {
+    width: 100%;
+    max-height: 35vh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (max-width: 943px) {
+  .home-page .container {
+    width: 100%;
+  }
+  .home-page .gallery {
+    padding: 0 30px;
+  }
+  .hero .hero-title {
+    font-size: 60px;
+  }
+  .filters {
+    gap: 20px;
+    padding-left: 30px;
+  }
+  .filters .filter:nth-child(2),
+  .filters .filter:nth-child(3) {
+    margin-left: 0;
+  }
+  .filters .filter:nth-child(3) {
+    margin-right: 0;
+  }
+  .gallery .gallery-item {
+    height: 400px;
+  }
+}
+@media (max-width: 868px) {
+  .header {
+    flex-wrap: wrap;
+    padding: 0;
+  }
+  .header .hamburger {
+    display: block;
+  }
+  .header-navbar {
+    flex-wrap: wrap;
+    width: 100% !important;
+  }
+  .header-navbar .custom-logo-link {
+    margin-left: 40px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+  .header-nav {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #E00000;
+    color: #fff;
+    height: 100vh;
+  }
+  .header-nav-list {
+    flex-direction: column;
+    gap: 40px;
+    text-align: center;
+    transition: max-height 0.5s ease-out;
+  }
+  .header-nav-list a {
+    color: #fff !important;
+  }
+  .header-nav-list .menu-item {
+    font-size: 44px;
+  }
+  .hamburger {
+    margin-right: 27px;
+  }
+  .hero {
+    height: 70vh;
+  }
+  .hero .hero-title {
+    font-size: 54px;
+  }
+  .filters {
+    justify-content: space-between;
+  }
+  .filters .filter:nth-child(2),
+  .filters .filter:nth-child(3) {
+    margin-left: 0;
+  }
+  .gallery .gallery-item {
+    height: 350px;
+  }
+  .single-photo-footer {
+    justify-content: space-between;
+    padding: 25px 0;
+  }
+  .single-photo-footer .single-photo-footer-txt {
+    margin-right: 0;
+  }
+  .single-photo-footer .photo-footer-nav {
+    display: none;
+  }
+  .footer {
+    padding: 44px 0 60px 0;
+  }
+  .footer .footer-nav-list {
+    flex-direction: column;
+    gap: 24px;
+  }
 }/*# sourceMappingURL=theme.css.map */

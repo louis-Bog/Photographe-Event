@@ -8,7 +8,7 @@
         <section class="header-hero">
 		<img class="image-hero" src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/titre-hero.png">
 	</section>
-
+	
 	<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>

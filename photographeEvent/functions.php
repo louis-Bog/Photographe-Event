@@ -1,28 +1,46 @@
 <?php
 
-register_nav_menus( array(
-	'main' => 'Menu Principal',
-	'footer' => 'Bas de page',
-) );
-
-
-
-function photographeEvent_register_assets()
+add_action('wp_enqueue_scripts', 'pe_enqueue_assets');
+function pe_enqueue_assets()
 {
-     // Chargement de la feuille du style du theme parent
-     wp_enqueue_style('parent-theme', get_template_directory_uri() . '/style.css');
+  
+  wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/assets/scss/theme.css', array(), filemtime(get_stylesheet_directory() . '/assets/css/theme.css'));
 
-     // Chargement de la feuille de style complémentaire du thème enfant
-     wp_enqueue_style('photographeEvent-child-theme', get_stylesheet_directory_uri() . '/assets/scss/theme.css');
+  /* Ajout de la librairie JQuery  */
+  wp_enqueue_script('JQuery-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array('jquery'), '3.7.1', true);
 
-      // Déclaration du js
-    wp_enqueue_script('custom-script', get_stylesheet_directory_uri() . '/assets/js/script.js', array('jquery'), null, true);
+  wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
+  wp_enqueue_script('Modal', get_stylesheet_directory_uri() . '/assets/js/modal.js', array('jquery'), '1.0.0', true);
+
 }
 
-add_action('wp_enqueue_scripts', 'photographeEvent_register_assets');
 
-// Ajouter la prise en charge des images mises en avant
-add_theme_support('post-thumbnails');
+// Menus
+add_action('init', 'pe_register_menus');
+function pe_register_menus() {
+  register_nav_menus([
+    'header-menu' => __('Menu En-tête', 'PhotographeEvent'),
+    'footer-menu' => __('Menu Pied de Page', 'PhotographeEvent')
+  ]);
+}
 
-// Ajouter automatiquement le titre du site dans l'en-tête du site
-add_theme_support('title-tag');
+
+// Supports WP
+add_action('after_setup_theme', 'pe_supports');
+function pe_supports() {
+  add_theme_support('custom-logo');
+  // Ajouter la prise en charge des images mises en avant
+  add_theme_support('post-thumbnails');
+  // Ajouter automatiquement le titre du site dans l'en-tête du site
+  add_theme_support('title-tag');
+  add_theme_support('menus');
+}
+
+
+// Plugin ContactForm7
+add_filter('wpcf7_autop_or_not', '__return_false'); // Disable p tags
+add_filter('wpcf7_form_elements', 'cf7_disable_span'); // Disable span tags
+function cf7_disable_span($content) {
+  $content = preg_replace('/<(span).*?class="\s*(?:.*\s)?wpcf7-form-control-wrap(?:\s[^"]+)?\s*"[^\>]*>(.*)<\/\1>/i', '\2', $content);
+  return $content;
+}
