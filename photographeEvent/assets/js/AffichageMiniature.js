@@ -13,12 +13,12 @@ $(document).ready(function() {
                         <img src="${$(this).data('thumbnail-url')}" alt="${$(this).hasClass('arrow-left') ? 'Photo précédente' : 'Photo suivante'}">
                     </a>`);
         },
-        // function() {
-        //     miniPicture.css({
-        //         visibility: 'visible',
-        //         opacity: 0
-        //     });
-        // }
+        function() {
+            miniPicture.css({
+                visibility: 'visible',
+                opacity: 0
+            });
+        }
     );
 
     $('.arrow-left, .arrow-right').click(function() {
