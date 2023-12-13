@@ -93,10 +93,12 @@ $breakpoint-mobile: 600px; // Mobile
     list-style: none;
   }
   body {
+    width: 1440px;
     font-family: $font-primary;
     font-size: 16px;
     background-color: $color-bg-page;
     border: 2px solid red;
+    margin: 0 auto;
   }
   h1 {
       font-size: 24px;

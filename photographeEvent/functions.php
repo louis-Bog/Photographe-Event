@@ -9,8 +9,14 @@ function pe_enqueue_assets()
   /* Ajout de la librairie JQuery  */
   wp_enqueue_script('JQuery-js', 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js', array('jquery'), '3.7.1', true);
 
-  wp_enqueue_script('main', get_stylesheet_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
   wp_enqueue_script('Modal', get_stylesheet_directory_uri() . '/assets/js/modal.js', array('jquery'), '1.0.0', true);
+
+   // Affichage des images miniature (script JQuery)
+   wp_enqueue_script('AffichageMiniature', get_stylesheet_directory_uri() . '/assets/js/AffichageMiniature.js', array('jquery'), '1.0.0', true);
+
+   // Custom JS (script JQuery)
+   wp_enqueue_script('CustomJS', get_stylesheet_directory_uri() . '/assets/js/Custom.js', array('jquery'), '1.0.0', true);
+
 
 }
 
